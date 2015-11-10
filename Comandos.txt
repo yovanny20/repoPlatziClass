@@ -1,0 +1,51 @@
+MODIFICAR EL PROMPT
+PS1="┌─\[\e[34;1m\][\A]\[\e[0;1m\]-\[\e[31;1m\]|\h@\u|\[\e[0;1m\]:[\W] \n└─\[\e[34;1m\][COMANDO]\[\e[0;1m\]-> "
+AÑADIR EL FONDO AL INICIO DE SESION DE GNOME
+
+#MOVER LA IMAGEN A LA RUTA ESPECIFICADA
+mv [ruta]/imagen.jpg /usr/share/gnome-shell/theme/
+
+#CAMBIAR LOS PERMISOS DE LA IMAGEN
+chmod go+r mario.jpg 
+
+#EDITAR EL ARCHIVO (gnome-shell.css)
+nano /usr/share/gnome-shell/theme/gnome-shell.css
+---------------------------------------------------------------------------------------------
+#lockDialogGroup {
+background: #2e3436 url(imagen.jpg);
+background-size: 1366px 768px;
+}
+COLOCAR TRANSPARENCIA A GNOME-TERMINAL
+
+#INSTALAR DEVILSPIE
+sudo apt-get install devilspie
+
+#CARGAR LAS PROPIEDADES DE GNOME
+gnome-session-properties
+
+
+#EDITAR LAS PROPIEDADES SEGÚN LA IMAGEN
+
+#CREAR LA CARPETA DEVILSPIE
+mkdir ~/.devilspie
+
+#CREAR EL ARCHIVO (gnome-terminal.ds)
+gedit ~/.devilspie/gnome-terminal.ds
+
+
+---------------------------------------------------------------------------------------------
+(if(is (window_class) "Gnome-terminal")
+     (opacity 99)
+)
+
+CONFIGURAR EL TECLADO EN ESPAÑOL 
+
+#LOGUEARSE COMO SUPER USUARIO
+sudo su
+
+#EJECUTAR LA SIGUIENTE LINEA
+echo 'ALL ALL=NOPASSWD: /usr/bin/setxkbmap' >> /etc/sudoers
+
+#PON LA SIGUIENTE EXPRESIÓN EN "Aplicacines al inicio"
+sudo setxkbmap -layout 'latam' -model pc105
+
