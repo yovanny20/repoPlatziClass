@@ -1,2 +1,42 @@
 INSTALACIÓN DE POSTGRES
 
+-------------------------------------------------------------------------------------------------------------------
+INSTALACIÓN
+
+*Ubica el Archivo (postgres.tar) en la carpeta [Documentos].
+*Abrir La Terminal NÂ° 1 con <CTRL+ALT+F1>
+*Logearte como Usuario basico login[xxxxx] password[*********].
+*Logearte como Superusuario con el comando <sudo su>
+
+*Mover el Archivo (postgres.tar) en (home) antes de ejecutar revisar NOTA.
+# mv /home/usuario/Documentos/postgres.tar /home
+
+*NOTA: En el anterior comando en la parte que dice usuario escribes
+*tu nombre de usuario puedes averiguarlo con el comando.
+# ls /home
+
+*Ubicarse en la carpeta (home).
+# cd /home
+
+*Desempaquetar el Archivo (postgres.tar).
+# tar xvf postgres.tar
+
+*Ingresar en la carpeta (postgres)
+# cd postgres
+
+*Cofigurar los paquetes de instalacion.
+# ./configure
+
+*Construir el Binario.
+# make
+
+*Instalar los paquetes.
+# make install
+
+*Verificar si la instalacion fue exitosa revisando la carpeta (pgsql).
+# cd /usr/local/pgsql
+# ls
+
+*Si la instalacion fue exitosa al listar los archivos con el comando <ls>
+*deben aparecer los siguientes directorios.
+==>     bin data include lib share
